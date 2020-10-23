@@ -1,0 +1,27 @@
+{
+
+  "servidores" : [
+
+    {
+
+      "ip" : "198.199.67.78",
+
+      "user" : "root",
+
+      "certificate" : "/home/fidel/.ssh/rootcertificate-221020-juancita.pub"
+
+    },
+
+    {
+
+      "ip" : "167.99.146.204",
+
+      "user" : "root",
+
+      "certificate" : "/home/fidel/.ssh/rootcertificate-221020-mariomamasa.pub"
+
+    }
+
+  ]
+
+}
