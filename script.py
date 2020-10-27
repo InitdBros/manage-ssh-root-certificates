@@ -5,6 +5,13 @@ import json
 
 
 def create_ssh_key(n):
+    """
+    Creamos el nuevo certificado localmente.
+    key_name = string que contiene nombre de la nueva llave.
+    :param n: nombre de la nueva llave ssh
+    :return: La función retorna el full path de la nueva llave ssh generada.
+    """
+
     print("\n\nComienzo de creación de llave SSH")
     x = datetime.datetime.now()
     date_certificate = x.strftime("%d%m%y")
@@ -17,6 +24,11 @@ def create_ssh_key(n):
 
 
 def bkp_ssh_key(local_ssh, h):
+    """
+    :param local_ssh: llave local ssh con la que nos vamos a conectar al server remoto para hacer backup del auth_keys.
+    :param h: host del servidor remoto.
+    :return: la funcion no retorna valores.
+    """
     print("Realizamos backup de la llave existente")
     user = "root"
     command_remote_server = "cp -piv ~/.ssh/authorized_keys ~/.ssh/authorized_keys.bkp"
@@ -25,6 +37,13 @@ def bkp_ssh_key(local_ssh, h):
 
 
 def push_ssh_key(local_ssh, new_ssh, h):
+
+    """
+    :param local_ssh: llave local ssh con la que nos vamos a conectar al server remoto.
+    :param new_ssh: nueva llave local generada en create_ssh.
+    :param h: host remoto.
+    :return: la funcion no retorna valores.
+    """
     print("Enviamos el nuevo certificado a los servidores: ")
     user = "root"
     new_certificate = "/tmp/authorized_keys"
